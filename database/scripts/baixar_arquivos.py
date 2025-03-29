@@ -33,7 +33,6 @@ def extract_zip(zip_path, extract_to):
 
 base_url_2023 = "https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/2023/"
 base_url_2024 = "https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/2024/"
-operadoras_url = "https://dadosabertos.ans.gov.br/FTP/PDA/operadoras_de_plano_de_saude_ativas/Relatorio_cadop.csv"
 
 arquivos_zip = [
     ("1T2023.zip", base_url_2023),
@@ -53,6 +52,5 @@ for arquivo, url_base in arquivos_zip:
     if zip_path:
         extract_zip(zip_path, download_folder)
 
-download_file(operadoras_url, download_folder)
 
 print("✅ Downloads concluídos!")
