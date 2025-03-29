@@ -1,16 +1,16 @@
 import csv
-import pdfplumber
-import zipfile
 import os
+import zipfile
+
+import pdfplumber
 
 pdf_path = '../web_scraping_ans/downloads/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf'
 csv_filename = 'resultados/rol_de_procedimentos.csv'
 
 abreviacoes = {
-    'AMB': 'Ambulatorial',
-    'HCO': 'Hospitalar com Obstetrícia',
-    'HSO': 'Hospitalar sem Obstetrícia',
-    'REF': 'Referência'
+    'AMB': 'Seg. Ambulatorial',
+    'OD': 'Seg. Odontológica',
+    'VIGNCIA': 'VIGÊNCIA'
 }
 
 def corrigir_encoding(texto):
