@@ -1,13 +1,18 @@
+import os
+
 import psycopg2
+from dotenv import load_dotenv
 from psycopg2 import OperationalError
 
+load_dotenv()
+
 db_config = {
-    'host': 'localhost',   
-    'database': 'postgres', 
-    'user': 'postgres', 
-    'password': 'senha123',
-    'port': 5433,
-    'options': '-c client_encoding=UTF8'
+    'host': os.getenv('DB_HOST'),   
+    'database': os.getenv('DB_DATABASE'), 
+    'user': os.getenv('DB_USER'), 
+    'password': os.getenv('DB_PASSWORD'),
+    'port': os.getenv('DB_PORT'),
+    'options': os.getenv('DB_OPTIONS')
 }
 
 def criar_conexao():

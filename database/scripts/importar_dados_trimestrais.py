@@ -41,18 +41,15 @@ def importar_dados_trimestrais():
             
             print(f"📥 Importando {arquivo} para {tabela}...")
             
-            # Carrega o arquivo CSV
             df = pd.read_csv(arquivo, delimiter=';', encoding='latin1')
             df = corrigir_colunas(df)
 
-            # Cria a lista de valores para inserção
             valores = [
                 (row['DATA'], row['REG_ANS'], row['CD_CONTA_CONTABIL'], row['DESCRICAO'], row['VL_SALDO_INICIAL'], row['VL_SALDO_FINAL'])
                 for _, row in df.iterrows()
             ]
 
             try:
-                # Inserir todas as linhas de uma vez usando executemany
                 cur.executemany(
                     f"""INSERT INTO {tabela} (data, reg_ans, cd_conta_contabil, descricao, vl_saldo_inicial, vl_saldo_final)
                         VALUES (%s, %s, %s, %s, %s, %s)
