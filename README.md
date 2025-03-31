@@ -181,8 +181,10 @@ O frontend roda localmente em:
 
     http://localhost:8080
 
-### Imagens da Interface:![enter image description here](https://drive.google.com/file/d/1TPqvbxEZtKBDVJG4UONKhyk2xLE15jeu/view?usp=sharing)
-![enter image description here](https://drive.google.com/file/d/1eeQYxj4hsZY3ijlY74UEaA-X3SMV09Xl/view?usp=sharing)
+### Imagens da Interface:
+
+<img src="./vue-front/assets/print-tela-desk-teste.png">
+<img src="./vue-front/assets/print-tela-mobile-teste.png">
     
 ## Conclusão
 
