@@ -43,7 +43,7 @@ export default {
       this.operadoras = []; 
 
       try {
-        const response = await axios.get(`http://localhost:5000/buscar_operadoras?termo=${this.termoBusca}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/buscar_operadoras?termo=${this.termoBusca}`);
 
         if (response.data.length > 0) {
           this.operadoras = response.data;
