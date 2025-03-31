@@ -39,8 +39,8 @@ def query_analitica():
     for query in queries:
         print(f"Executando: {query['descricao']}")
         try:
-            cur.execute(query['sql'])  # Executando a query
-            resultados = cur.fetchall()  # Obtendo os resultados
+            cur.execute(query['sql']) 
+            resultados = cur.fetchall()
             if resultados:
                 for row in resultados:
                     print(row)
@@ -49,8 +49,8 @@ def query_analitica():
         except Exception as e:
             print(f"❌ Erro ao executar a query: {e}")
     
-    cur.close()  # Fechando o cursor após todas as execuções
-    conn.close()  # Fechando a conexão após o término
+    cur.close()  
+    conn.close()
     print("Queries analíticas executadas com sucesso.")
 
 if __name__ == "__main__":

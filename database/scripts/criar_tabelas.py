@@ -58,11 +58,9 @@ def criar_tabelas():
             """
         ]
 
-        # Criar tabelas
         for sql in tabelas_sql:
             cur.execute(sql)
 
-        # Criar índice único para a combinação das colunas reg_ans, data e cd_conta_contabil
         cur.execute(
             """
             CREATE UNIQUE INDEX IF NOT EXISTS unique_reg_ans_data_conta ON demonstrativo_contabil_2023 (reg_ans, data, cd_conta_contabil);
@@ -80,5 +78,4 @@ def criar_tabelas():
         fechar_conexao(conn)
         print("✅ Tabelas e índices criados com sucesso.")
 
-# Chame a função de criação de tabelas
 criar_tabelas()
