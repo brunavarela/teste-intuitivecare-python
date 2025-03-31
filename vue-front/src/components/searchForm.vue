@@ -27,37 +27,36 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { buscarOperadoras } from "../services/api";
 
 export default {
   data() {
     return {
-      termoBusca: '',
+      termoBusca: "",
       operadoras: [],
-      erro: '',
+      erro: "",
     };
   },
   methods: {
     async buscarOperadoras() {
-      this.erro = ''; 
-      this.operadoras = []; 
+      this.erro = "";
+      this.operadoras = [];
 
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/buscar_operadoras?termo=${this.termoBusca}`);
-
-        if (response.data.length > 0) {
-          this.operadoras = response.data;
+        const data = await buscarOperadoras(this.termoBusca);
+        if (data.length > 0) {
+          this.operadoras = data;
         } else {
-          this.erro = 'Desculpe. Nenhuma operadora encontrada com este termo.';
+          this.erro = "Desculpe. Nenhuma operadora encontrada com este termo.";
         }
       } catch (error) {
-        this.erro = 'Erro ao buscar operadoras. Tente novamente.';
-        console.error(error);
+        this.erro = error.message;
       }
     },
   },
 };
 </script>
+
 
 <style scoped>
   .form-container {
