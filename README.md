@@ -24,40 +24,6 @@ Este documento detalha a implementação do teste técnico, desde o Web Scraping
 -   Pandas
     
 
-### Execução:
-
-1.  Acesse o site: https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-dasociedade/atualizacao-do-rol-de-procedimentos
-    
-2.  Baixe os PDFs dos Anexos I e II.
-    
-3.  Salve e compacte em um arquivo ZIP.
-## 1. Web Scraping
-
-**Objetivo:** Acessar o site da ANS, baixar os PDFs e compactá-los.
-
-### Tecnologias Utilizadas:
-
--   Python
-    
--   Requests
-    
--   BeautifulSoup
-    
--   PyPDF2
-    
--   Tabula-py
-    
--   Pandas
-    
-
-### Execução:
-
-1.  Acesse o site: https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-dasociedade/atualizacao-do-rol-de-procedimentos
-    
-2.  Baixe os PDFs dos Anexos I e II.
-    
-3.  Salve e compacte em um arquivo ZIP.
-
 **Comando para execução:**
 
     python web_scraping.py
@@ -65,17 +31,6 @@ Este documento detalha a implementação do teste técnico, desde o Web Scraping
 ## 2. Transformação de Dados
 
 **Objetivo:** Extrair os dados da tabela "Rol de Procedimentos e Eventos em Saúde" e salvar em CSV.
-
-### Execução:
-
-1.  Extração dos dados do PDF do Anexo I.
-    
-2.  Salvamento dos dados estruturados em CSV.
-    
-3.  Substituição das abreviações OD e AMB por suas descrições completas.
-    
-4.  Compactação do CSV.
-    
 
 **Comando para execução:**
 
